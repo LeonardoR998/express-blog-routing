@@ -35,4 +35,28 @@ let posts = [
   },
 ];
 
+// INDEX - Mostra tutti i post
+router.get("/posts", function (req, res) {
+  res.send("Lista di tutti i post");
+});
+// SHOW - Mostra un post specifico (per titolo)
+router.get("/posts/:title", function (req, res) {
+  res.send("Dettagli del post: " + req.params.title);
+});
+
+// CREATE - Crea un nuovo post (senza parsing body)
+router.post("/posts", function (req, res) {
+  res.send("Creazione nuovo post");
+});
+
+// UPDATE - Modifica integrale di un post (per titolo)
+router.put("/posts/:title", function (req, res) {
+  res.send("Modifica integrale del post: " + req.params.title);
+});
+
+// DELETE - Elimina un post (per titolo)
+router.delete("/posts/:title", function (req, res) {
+  res.send("Eliminazione del post: " + req.params.title);
+});
+
 module.exports = router;
